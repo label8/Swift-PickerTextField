@@ -11,6 +11,7 @@ import UIKit
 class PickerTextField: UITextField {
 
     var dataList: Array = Array<String>()
+//    var dataList: Array = Array<Any>()
     
     init() {
         super.init(frame: CGRect.zero)
@@ -25,7 +26,7 @@ class PickerTextField: UITextField {
     }
     
     func setup(dataList: [String]) {
-        
+//    func setup(dataList: Array<Any>) {
         self.dataList = dataList
         
         let pickerView: UIPickerView = UIPickerView()
@@ -81,10 +82,24 @@ extension PickerTextField: UIPickerViewDataSource {
 extension PickerTextField: UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        if let list = dataList[row] as? Dictionary<String, Any> {
+//            if let data = list["prefecture"] {
+//               return data as? String
+//            }
+//        }
+//
+//        return ""
+        
         return dataList[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        if let list = dataList[row] as? Dictionary<String, Any> {
+//            if let data = list["prefecture"] {
+//                self.text = data as? String
+//            }
+//        }
+        
         self.text = dataList[row]
     }
 
