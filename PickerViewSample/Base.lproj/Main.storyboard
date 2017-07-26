@@ -21,22 +21,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbI-Zl-16i" customClass="PickerTextField" customModule="PickerViewSample" customModuleProvider="target">
-                                <rect key="frame" x="139" y="195" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AbI-Zl-16i" customClass="PickerTextField" customModule="PickerViewSample" customModuleProvider="target">
+                                <rect key="frame" x="100" y="200" width="175" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLo-Uh-kfx" customClass="PickerTextField" customModule="PickerViewSample" customModuleProvider="target">
-                                <rect key="frame" x="139" y="267" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLo-Uh-kfx" customClass="PickerTextField" customModule="PickerViewSample" customModuleProvider="target">
+                                <rect key="frame" x="100" y="260" width="175" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTz-rG-7n5">
+                                <rect key="frame" x="164" y="415" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="登録"/>
+                                <connections>
+                                    <action selector="regist:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSR-a5-mL7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="AbI-Zl-16i" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="180" id="9Nk-wO-k72"/>
+                            <constraint firstItem="gLo-Uh-kfx" firstAttribute="top" secondItem="AbI-Zl-16i" secondAttribute="bottom" constant="30" id="CBA-Wj-yxJ"/>
+                            <constraint firstAttribute="trailing" secondItem="AbI-Zl-16i" secondAttribute="trailing" constant="100" id="IcR-Ze-aL9"/>
+                            <constraint firstAttribute="trailing" secondItem="gLo-Uh-kfx" secondAttribute="trailing" constant="100" id="aiR-O8-c4c"/>
+                            <constraint firstItem="AbI-Zl-16i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="nbi-jv-qZZ"/>
+                            <constraint firstItem="gLo-Uh-kfx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="p2B-FA-uai"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="pickerTextField1" destination="AbI-Zl-16i" id="pDG-AN-oY1"/>

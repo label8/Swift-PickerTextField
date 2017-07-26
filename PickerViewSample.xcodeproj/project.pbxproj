@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C16BEFB1F2825F60003E9B1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C16BEFA1F2825F60003E9B1 /* APIClient.swift */; };
 		5C6418E11F26F35B002CEC57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6418E01F26F35B002CEC57 /* AppDelegate.swift */; };
 		5C6418E31F26F35B002CEC57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6418E21F26F35B002CEC57 /* ViewController.swift */; };
 		5C6418E61F26F35B002CEC57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6418E41F26F35B002CEC57 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C16BEFA1F2825F60003E9B1 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		5C6418DD1F26F35B002CEC57 /* PickerViewSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickerViewSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6418E01F26F35B002CEC57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C6418E21F26F35B002CEC57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				5C6418E21F26F35B002CEC57 /* ViewController.swift */,
 				5C6418E41F26F35B002CEC57 /* Main.storyboard */,
 				5C6418FA1F27361C002CEC57 /* PickerTextField.swift */,
+				5C16BEFA1F2825F60003E9B1 /* APIClient.swift */,
 				5C6418E71F26F35B002CEC57 /* Assets.xcassets */,
 				5C6418E91F26F35B002CEC57 /* LaunchScreen.storyboard */,
 				5C6418EC1F26F35B002CEC57 /* Info.plist */,
@@ -141,6 +144,7 @@
 			files = (
 				5C6418E31F26F35B002CEC57 /* ViewController.swift in Sources */,
 				5C6418E11F26F35B002CEC57 /* AppDelegate.swift in Sources */,
+				5C16BEFB1F2825F60003E9B1 /* APIClient.swift in Sources */,
 				5C6418FB1F27361C002CEC57 /* PickerTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +305,7 @@
 				5C6418F11F26F35B002CEC57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

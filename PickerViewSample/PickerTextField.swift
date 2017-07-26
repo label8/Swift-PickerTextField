@@ -10,44 +10,64 @@ import UIKit
 
 class PickerTextField: UITextField {
 
-    var dataList: Array = Array<String>()
-//    var dataList: Array = Array<Any>()
+    // UIPickerViewのインスタンス生成
+    let pickerView: UIPickerView = UIPickerView()
+
+    // 表示データの初期化
+    var dataList: Array = Array<String>() {
+        // データがセットされたら
+        didSet {
+            // PickerViewを更新
+            pickerView.reloadAllComponents()
+        }
+    }
     
+    // 選択された項目番号を保持する変数の初期化
+    var selectedItemRow: Int = 0
+    
+    // イニシャライザ
     init() {
         super.init(frame: CGRect.zero)
     }
     
+    // イニシャライザ（コードから）
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
+    // イニシャライザ（Storyboardから）
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
+    // UIPickerViewとUITextFiledの結合設定
     func setup(dataList: [String]) {
-//    func setup(dataList: Array<Any>) {
+
+        // 表示データのセット
         self.dataList = dataList
         
-        let pickerView: UIPickerView = UIPickerView()
+        // デリゲート
         pickerView.delegate = self
         pickerView.dataSource = self
         pickerView.showsSelectionIndicator = true
         
+        // UIPickerViewへのツールバー設定
         let toolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: 44))
         let doneItem: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(PickerTextField.done))
-        let cancelItem: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(PickerTextField.cancel))
-        toolbar.setItems([cancelItem, doneItem], animated: true)
+//        let cancelItem: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(PickerTextField.cancel))
+//        toolbar.setItems([cancelItem, doneItem], animated: true)
+        toolbar.setItems([doneItem], animated: true)
         
         self.inputView = pickerView
         self.inputAccessoryView = toolbar
     }
     
-    func cancel() {
-        self.text = ""
-        self.endEditing(true)
-    }
+//    func cancel() {
+//        self.text = ""
+//        self.endEditing(true)
+//    }
 
+    // 決定ボタンタップでUIPickerViewと閉じる
     func done() {
         self.endEditing(true)
     }
@@ -82,24 +102,11 @@ extension PickerTextField: UIPickerViewDataSource {
 extension PickerTextField: UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        if let list = dataList[row] as? Dictionary<String, Any> {
-//            if let data = list["prefecture"] {
-//               return data as? String
-//            }
-//        }
-//
-//        return ""
-        
         return dataList[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        if let list = dataList[row] as? Dictionary<String, Any> {
-//            if let data = list["prefecture"] {
-//                self.text = data as? String
-//            }
-//        }
-        
+        selectedItemRow = row
         self.text = dataList[row]
     }
 
