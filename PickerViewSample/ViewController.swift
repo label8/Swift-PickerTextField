@@ -41,6 +41,13 @@ class ViewController: UIViewController {
     
     // 登録ボタン
     @IBAction func regist(_ sender: Any) {
+        if prefectureRow == 0 {
+            showAlertDialog(title: "エラー", message: "住所は必須です", buttonTitle: "OK", okFunc: { () -> Void in
+                print("OKが押されたよ！")
+//                self.pickerTextField1.becomeFirstResponder()
+            })
+        }
+        
         if prefectureRow > 0 {
 print(prefectureRow)
             print(prefectureList[prefectureRow])
@@ -66,15 +73,15 @@ extension ViewController: UITextFieldDelegate {
     // テキストフィールドの入力が終わったら呼び出される（ピッカーのDoneが押されたら）
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.tag == 1 {
-            // 選択された都道府県コードをセット（都道府県は必須選択なので都道府県コード0はない）
-            prefectureRow = pickerTextField1.selectedItemRow + 1
-            // デフォルト表示
-            pickerTextField2.text = "未選択"
-            
+            // 市町村区のデータをリセット
             self.cities.removeAll()
             self.cityList.removeAll()
             self.cityRow = 0
             
+            // 選択された都道府県コードをセット（都道府県は必須選択なので都道府県コード0はない）
+            prefectureRow = pickerTextField1.selectedItemRow + 1
+            // デフォルト表示
+            pickerTextField2.text = "未選択"
             // 市町村のデータを配列にセットする
             setCities(prefCode: prefectureRow)
             // ピッカーの1行目を初期選択状態にする
@@ -114,7 +121,6 @@ extension ViewController {
     }
     
     func setCities(prefCode: Int) {
-print(prefCode)
         let api = APIClient()
         let url = "https://opendata.resas-portal.go.jp/api/v1/cities?prefCode=\(prefCode)"
         let addRequestValues = [
